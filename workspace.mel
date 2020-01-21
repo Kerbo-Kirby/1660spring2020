@@ -1,4 +1,4 @@
-//Maya 2018 Project Definition
+//Maya 2020 Project Definition
 
 workspace -fr "fluidCache" "cache/nCache/fluid";
 workspace -fr "images" "images";
@@ -42,9 +42,11 @@ workspace -fr "fileCache" "cache/nCache";
 workspace -fr "eps" "data";
 workspace -fr "STL_ATF Export" "data";
 workspace -fr "3dPaintTextures" "sourceimages/3dPaintTextures";
+workspace -fr "DXF_ATF Export" "";
 workspace -fr "translatorData" "data";
 workspace -fr "mel" "scripts";
 workspace -fr "particles" "cache/particles";
+workspace -fr "DXF_ATF" "";
 workspace -fr "scene" "scenes";
 workspace -fr "SAT_ATF" "data";
 workspace -fr "PROE_ATF" "data";
