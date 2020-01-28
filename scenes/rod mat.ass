@@ -1,0 +1,139 @@
+### exported: Thu Jan 23 10:44:20 2020
+### from:     Arnold 5.0.1.0 [8ea063c7] windows icc-17.0.2 oiio-1.7.15 osl-1.9.0 vdb-4.0.0 clm-1.0.3.513 rlm-12.2.2 2017/06/27 18:48:44
+### host app: MtoA 2.0.1 2ad5768c (master) Maya 2018
+
+
+
+options
+{
+ AA_samples 3
+ outputs "RGBA RGBA defaultArnoldFilter@gaussian_filter defaultArnoldDriver@driver_exr.RGBA"
+ xres 960
+ yres 540
+ texture_per_file_stats on
+ texture_searchpath "C:/Users/10740520/Documents/1660spring2020/sourceimages"
+ texture_automip off
+ texture_specular_blur 0
+ camera "perspShape"
+ color_manager "defaultColorMgtGlobals"
+ procedural_searchpath "C:/Users/10740520/Documents/1660spring2020/"
+ GI_diffuse_depth 1
+ GI_specular_depth 1
+ GI_transmission_depth 8
+ declare frame constant FLOAT
+ frame 1
+ declare render_layer constant STRING
+ render_layer "defaultRenderLayer"
+ declare fps constant FLOAT
+ fps 24
+}
+
+gaussian_filter
+{
+ name defaultArnoldFilter@gaussian_filter
+ width 2
+}
+
+driver_exr
+{
+ name defaultArnoldDriver@driver_exr.RGBA
+ filename "C:/Users/10740520/Documents/1660spring2020/images/untitled.exr"
+ compression "zip"
+ half_precision off
+ tiled off
+ color_space ""
+ preserve_layer_name off
+ autocrop off
+ append off
+}
+
+color_manager_syncolor
+{
+ name defaultColorMgtGlobals
+ native_catalog_path "C:/Program Files/Autodesk/Maya2018/synColor"
+ custom_catalog_path "C:/Users/10740520/Documents/maya/synColor/Shared/"
+ rendering_color_space "scene-linear Rec 709/sRGB"
+}
+
+persp_camera
+{
+ name perspShape
+ matrix
+ 0.707106769 0 -0.707106769 0
+ -0.331294566 0.883452237 -0.331294566 0
+ 0.624695063 0.468521297 0.624695063 0
+ 4.20893908 3.15670443 4.20893908 1
+ near_clip 0.100000001
+ far_clip 10000
+ screen_window_min -1 -1
+ screen_window_max 1 1
+ shutter_start 0
+ shutter_end 0
+ shutter_type "box"
+ rolling_shutter "off"
+ rolling_shutter_duration 0
+ motion_start 0
+ motion_end 0
+ exposure 0
+ fov 54.4322243
+ focus_distance 1
+ aperture_size 0
+ aperture_blades 0
+ aperture_rotation 0
+ aperture_blade_curvature 0
+ aperture_aspect_ratio 1
+ uv_remap 0 0 0 0
+ radial_distortion 0
+}
+
+polymesh
+{
+ name uv_meshShape
+ visibility 255
+ sidedness 255
+ receive_shadows on
+ self_shadows on
+ matrix
+ 1 0 0 0
+ 0 1 0 0
+ 0 0 1 0
+ 0 0 0 1
+ shader "lambert2SG"
+ opaque on
+ matte off
+ id 526705299
+ nsides 6 1 UINT
+4 4 4 4 4 4
+ vidxs 24 1 b85UINT
+B$ZuK*%<ho2%s\>:$$-?2$vMr4%<MT0
+ nidxs 24 1 b85UINT
+B$v2N*&9nA:'RU4J(k<'Z*.woj+G^c%
+ uvidxs 24 1 b85UINT
+B*.woj'RU4J+G^c%(k<'Z$v2N*&9nA:
+ vlist 8 1 b85VECTOR
+afD$EaDq998D&a?8__/oaDq998D&a?afD$E89+]c8D&a?8__/o89+]c8D&a?afD$E89+]ca$%.`8__/o89+]ca$%.`afD$EaDq99a$%.`8__/oaDq99a$%.`
+ nlist 24 1 b85VECTOR
+zz8Fcb8zz8Fcb8zz8Fcb8zz8Fcb8z8Fcb8zz8Fcb8zz8Fcb8zz8Fcb8!$$$$$$$$$'aRT=czzaRT=czzaRT=czzaRT=czaRT=czzaRT=czzaRT=czzaRT=czyzzyzzyzzyzzaRT=dzzaRT=dzzaRT=dzzaRT=dzz
+ uvlist 24 1 b85VECTOR2
+8<ndO6v+DY8A&`R6v+DY8A&`R7usk.8<ndO7usk.8A2:`8._8I8A2:`7vB'M8E?6b7vB'M8E?6b8._8I7vb./8F_-)7vb./6v+DY8.o;c6v+DY8.o;c8F_-)87v^(8F_-+87v^(6v+DY8<^/I6v+DY8<^/I8F_-+6tu)+8F_-+6tu)+6v+E-7urpg6v+E-7urpg8F_-+8/;Pm8F_-+8/;Pm6v+GY87UHs6v+GY87UHs8F_-+
+ smoothing on
+ step_size 0
+ volume_padding 0
+ declare mtoa_shading_groups constant ARRAY NODE
+ mtoa_shading_groups "lambert2SG"
+}
+
+MayaShadingEngine
+{
+ name lambert2SG
+ beauty rod_mat
+}
+
+lambert
+{
+ name rod_mat
+ Kd 0.800000012
+ Kd_color 0.5 0.5 0.5
+ opacity 1 1 1
+}
+
