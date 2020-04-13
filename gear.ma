@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: gear.ma
-//Last modified: Sun, Apr 12, 2020 06:34:13 PM
+//Last modified: Sun, Apr 12, 2020 06:35:05 PM
 //Codeset: 1252
 requires maya "2020";
 requires -nodeType "polyGear" "modelingToolkit" "0.0.0.0";
@@ -12,7 +12,7 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "201911140446-42a737a01c";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "B9BD2FB5-4136-6CAC-7CC9-C8A58F23DAFA";
+fileInfo "UUID" "6653371A-4F9C-E694-4A12-06B4D22BE4F9";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "E5FEBA69-4693-8AA3-0BB2-509518DE5618";
@@ -96,7 +96,7 @@ createNode mesh -n "pGearShape1" -p "pGear1";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "pGear2";
 	rename -uid "C9F61207-4D5A-6CBA-6372-C3B6AE3B0108";
-	setAttr ".t" -type "double3" 0 1.4573316736408366 2.3040312091655166 ;
+	setAttr ".t" -type "double3" 0 1.4573316736408366 2.6317682155144833 ;
 	setAttr ".r" -type "double3" 8.7223113466687909 86.810121294537311 -81.244662368596522 ;
 createNode mesh -n "pGearShape2" -p "pGear2";
 	rename -uid "7BFE51BA-4FBB-3E84-7AE3-81859BF02BBE";
