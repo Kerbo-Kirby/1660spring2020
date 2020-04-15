@@ -1,37 +1,39 @@
 //Maya ASCII 2020 scene
-//Name: water boundary for unity.ma
-//Last modified: Wed, Apr 15, 2020 12:07:54 AM
+//Name: diamond for unity.ma
+//Last modified: Wed, Apr 15, 2020 12:12:57 AM
 //Codeset: 1252
 requires maya "2020";
+requires "mtoa" "4.0.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "201911140446-42a737a01c";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "CED7E12E-4D35-BFA7-60E3-449D7B72A10A";
+fileInfo "UUID" "3DE24E9F-4CDA-F8E8-3ABA-C2A1F55B2191";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
-	rename -uid "51CB39C0-401B-796D-A09B-139171EFC8DD";
+	rename -uid "4A866656-43BD-3362-B406-7385C739F37B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 4.0505114571416545 21.283727150297931 22.511796211370523 ;
-	setAttr ".r" -type "double3" -42.93835272960829 370.1999999998252 4.0395357585780462e-16 ;
+	setAttr ".t" -type "double3" -4.5752995663234781 0.8965722547673256 2.2911393538188118 ;
+	setAttr ".r" -type "double3" -9.9383527295967831 -63.399999999999018 0 ;
 createNode camera -s -n "perspShape" -p "persp";
-	rename -uid "5CBB3114-4DB7-6403-717A-D9914562464D";
+	rename -uid "D5002F16-48BB-7F68-DD2B-4EA26F6B9185";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 31.243953865265766;
+	setAttr ".coi" 5.1948558659724506;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
 	setAttr ".hc" -type "string" "viewSet -p %camera";
+	setAttr ".ai_translator" -type "string" "perspective";
 createNode transform -s -n "top";
-	rename -uid "F557FA9E-41EB-A83A-BC02-8F98AEC2968F";
+	rename -uid "5E063EE1-4249-5C15-8EC4-D39BA1148033";
 	setAttr ".v" no;
 	setAttr ".t" -type "double3" 0 1000.1 0 ;
 	setAttr ".r" -type "double3" -90 0 0 ;
 createNode camera -s -n "topShape" -p "top";
-	rename -uid "E05E758A-48E4-CC23-EB33-A8B88A5E9D12";
+	rename -uid "D6196082-414E-A1F4-506D-D78548165508";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
@@ -41,12 +43,13 @@ createNode camera -s -n "topShape" -p "top";
 	setAttr ".man" -type "string" "top_mask";
 	setAttr ".hc" -type "string" "viewSet -t %camera";
 	setAttr ".o" yes;
+	setAttr ".ai_translator" -type "string" "orthographic";
 createNode transform -s -n "front";
-	rename -uid "722D2894-4581-41C6-6809-24991A28A8AA";
+	rename -uid "C1E82156-4A5B-8DC6-3381-93946EE1B1B7";
 	setAttr ".v" no;
 	setAttr ".t" -type "double3" 0 0 1000.1 ;
 createNode camera -s -n "frontShape" -p "front";
-	rename -uid "23BE0BDF-435C-5B82-D015-AAB7877CFC4D";
+	rename -uid "54CCF923-4579-98FA-D4A0-1F871AF96E12";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
@@ -56,13 +59,14 @@ createNode camera -s -n "frontShape" -p "front";
 	setAttr ".man" -type "string" "front_mask";
 	setAttr ".hc" -type "string" "viewSet -f %camera";
 	setAttr ".o" yes;
+	setAttr ".ai_translator" -type "string" "orthographic";
 createNode transform -s -n "side";
-	rename -uid "60214527-460E-A1F6-A89F-7591048355B5";
+	rename -uid "2C8E2E78-457C-6D0C-CCB2-E4BC48889432";
 	setAttr ".v" no;
 	setAttr ".t" -type "double3" 1000.1 0 0 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 createNode camera -s -n "sideShape" -p "side";
-	rename -uid "C006A1E8-4AAF-3F47-3E79-6A861680C038";
+	rename -uid "94340DA8-49FE-2161-2E31-ECB45672DB2E";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
@@ -72,32 +76,43 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".man" -type "string" "side_mask";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
+	setAttr ".ai_translator" -type "string" "orthographic";
 createNode transform -n "pCube1";
-	rename -uid "231DFBEA-4130-88ED-C446-96B244796634";
-	setAttr ".s" -type "double3" 23.876057102869211 0.16171371777022853 23.876057102869211 ;
+	rename -uid "D564C5F1-4C23-FA37-F261-A5967C041860";
 createNode mesh -n "pCubeShape1" -p "pCube1";
-	rename -uid "B42D1B05-4123-D2B4-E07B-71B6D0975DCF";
+	rename -uid "F18D756A-4F62-3EF3-A9DD-6481EB823C29";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5 0.5 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+	setAttr -s 22 ".uvst[0].uvsp[0:21]" -type "float2" 0.375 0 0.625 0 0.375
 		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
-		 0.875 0.25 0.125 0 0.125 0.25;
+		 0.875 0.25 0.125 0 0.125 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.375 0.25
+		 0.625 0.25 0.625 0.5 0.375 0.5;
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".fbda" no;
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
-		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
-	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
-		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
-	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+	setAttr -s 6 ".pt";
+	setAttr ".pt[12]" -type "float3" 0.21025948 0.16903391 -0.21025948 ;
+	setAttr ".pt[13]" -type "float3" -0.21025948 0.16903391 -0.21025948 ;
+	setAttr ".pt[14]" -type "float3" -0.21025948 0.16903391 0.21025948 ;
+	setAttr ".pt[15]" -type "float3" 0.21025948 0.16903391 0.21025948 ;
+	setAttr -s 16 ".vt[0:15]"  -0.027267486 -0.5 0.027267486 0.027267486 -0.5 0.027267486
+		 -0.59502071 0.4843258 0.59502071 0.59502071 0.4843258 0.59502071 -0.59502071 0.4843258 -0.59502071
+		 0.59502071 0.4843258 -0.59502071 -0.027267486 -0.5 -0.027267486 0.027267486 -0.5 -0.027267486
+		 -0.64437318 0.68063009 0.64437318 0.64437318 0.68063009 0.64437318 0.64437318 0.68063009 -0.64437318
+		 -0.64437318 0.68063009 -0.64437318 -0.64437318 0.68063009 0.64437318 0.64437318 0.68063009 0.64437318
+		 0.64437318 0.68063009 -0.64437318 -0.64437318 0.68063009 -0.64437318;
+	setAttr -s 28 ".ed[0:27]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0 2 8 0 3 9 0 8 9 0 5 10 0 9 10 0 4 11 0 11 10 0 8 11 0
+		 8 12 0 9 13 0 12 13 0 10 14 0 13 14 0 11 15 0 15 14 0 12 15 0;
+	setAttr -s 14 -ch 56 ".fc[0:13]" -type "polyFaces" 
 		f 4 0 5 -2 -5
 		mu 0 4 0 1 3 2
-		f 4 1 7 -3 -7
-		mu 0 4 2 3 5 4
+		f 4 22 24 -27 -28
+		mu 0 4 18 19 20 21
 		f 4 2 9 -4 -9
 		mu 0 4 4 5 7 6
 		f 4 3 11 -1 -11
@@ -105,209 +120,47 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 		f 4 -12 -10 -8 -6
 		mu 0 4 1 10 11 3
 		f 4 10 4 6 8
-		mu 0 4 12 0 2 13;
+		mu 0 4 12 0 2 13
+		f 4 1 13 -15 -13
+		mu 0 4 2 3 15 14
+		f 4 7 15 -17 -14
+		mu 0 4 3 5 16 15
+		f 4 -3 17 18 -16
+		mu 0 4 5 4 17 16
+		f 4 -7 12 19 -18
+		mu 0 4 4 2 14 17
+		f 4 14 21 -23 -21
+		mu 0 4 14 15 19 18
+		f 4 16 23 -25 -22
+		mu 0 4 15 16 20 19
+		f 4 -19 25 26 -24
+		mu 0 4 16 17 21 20
+		f 4 -20 20 27 -26
+		mu 0 4 17 14 18 21;
 	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".ai_translator" -type "string" "polymesh";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "14A3A2A5-4E4B-EB8D-D167-F686A5C90E0F";
-	setAttr -s 13 ".lnk";
-	setAttr -s 13 ".slnk";
+	rename -uid "B03CE4D1-4693-4152-BD20-3297DD85C944";
+	setAttr -s 2 ".lnk";
+	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "5A9C044B-4211-3584-FA78-9AB81A3C39B8";
+	rename -uid "CA31AEB9-4821-E82D-AD6F-FE9129E6A5EC";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "015CCFD0-4A12-16F0-FD20-278233796873";
+	rename -uid "AB77F1E5-4EF5-7EC7-A7E3-D098DFE12377";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "3AB95F02-425A-D56D-18E2-02A6A6208E00";
+	rename -uid "46D852D7-4D6E-39AB-B6EF-D5B98BD907E4";
 createNode displayLayer -n "defaultLayer";
-	rename -uid "14D8423E-4985-6B07-7394-9FB05AE6E870";
+	rename -uid "8FD9475D-4292-9613-09B0-ADB8469C077D";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "D04C48F0-4781-D659-1B73-B3A58A197650";
+	rename -uid "51BFFAB4-40D5-1A7F-D8EA-DDADAD6B83B3";
 createNode renderLayer -n "defaultRenderLayer";
-	rename -uid "D9191C3B-4B38-7C43-E84E-E3A72D657B96";
+	rename -uid "BB3D5A08-43E7-3DF9-C4FE-468C639AC595";
 	setAttr ".g" yes;
-createNode standardSurface -n "standardSurface2";
-	rename -uid "F0A8D39B-4DEC-C935-DE18-F7886F7A251E";
-	setAttr ".bc" -type "float3" 1 0 0 ;
-createNode shadingEngine -n "standardSurface2SG";
-	rename -uid "F08F2224-4800-9790-1BDA-22A9E46B7BBA";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "materialInfo1";
-	rename -uid "A33B38EF-46F1-3B02-7354-DC96F9728F82";
-createNode blinn -n "blinn1";
-	rename -uid "661CFE08-470C-8A6E-9BAB-CEA3CA642517";
-createNode shadingEngine -n "blinn1SG";
-	rename -uid "CAF0ADD1-44B8-DA25-C312-E281363DC0B4";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "materialInfo2";
-	rename -uid "5C9F9779-429E-BD06-2995-7A90479EE765";
-createNode layeredShader -n "layeredShader1";
-	rename -uid "2878CAD8-413D-DAD7-7083-F680B67CF7E1";
-	setAttr ".cs[0].c" -type "float3" 0 0.1539 0.0307 ;
-	setAttr ".cs[0].t" -type "float3" 0.2 0.2 0.2 ;
-	setAttr ".cs[0].g" -type "float3" 0 0 0 ;
-createNode shadingEngine -n "layeredShader1SG";
-	rename -uid "7AFF9880-45C8-35EE-417C-B990219A5245";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "materialInfo3";
-	rename -uid "E0C42A5E-460D-9C0E-0B3C-10898EDB08D8";
-createNode phong -n "phong1";
-	rename -uid "247AF810-4E19-5304-B2CD-2C989B7652B7";
-	setAttr ".c" -type "float3" 1 0 0 ;
-createNode shadingEngine -n "phong1SG";
-	rename -uid "1A8BA043-4BFF-352B-C6D0-FAAE7146882B";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "materialInfo4";
-	rename -uid "A9B3D514-431C-408F-3CBB-EA92AF3A0F2D";
-createNode rampShader -n "rampShader1";
-	rename -uid "03F4F99A-43AF-F891-E390-E7A02363ACD8";
-	setAttr ".clr[0].clrp" 0;
-	setAttr ".clr[0].clrc" -type "float3" 1 0 0 ;
-	setAttr ".clr[0].clri" 1;
-	setAttr ".it[0].itp" 0;
-	setAttr ".it[0].itc" -type "float3" 0 0 0 ;
-	setAttr ".it[0].iti" 1;
-	setAttr ".ic[0].icp" 0;
-	setAttr ".ic[0].icc" -type "float3" 0 0 0 ;
-	setAttr ".ic[0].ici" 1;
-	setAttr -s 2 ".sro[0:1]"  0 1 2 0.5 0.5 2;
-	setAttr ".sc[0].scp" 0;
-	setAttr ".sc[0].scc" -type "float3" 0.5 0.5 0.5 ;
-	setAttr ".sc[0].sci" 1;
-	setAttr ".rfl[0]"  0 1 1;
-	setAttr ".env[0].envp" 0;
-	setAttr ".env[0].envc" -type "float3" 0 0 0 ;
-	setAttr ".env[0].envi" 1;
-createNode shadingEngine -n "rampShader1SG";
-	rename -uid "FD112FDD-42AC-A4BC-7CBB-17BDE16C0B8E";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "materialInfo5";
-	rename -uid "294FC58C-4CCF-9D93-8C6E-51A5CFA932DA";
-createNode rampShader -n "rampShader2";
-	rename -uid "507B35AE-46AB-21BD-A9B7-7C97B7A0A34E";
-	setAttr ".clr[0].clrp" 0;
-	setAttr ".clr[0].clrc" -type "float3" 1 0 0 ;
-	setAttr ".clr[0].clri" 1;
-	setAttr ".it[0].itp" 0;
-	setAttr ".it[0].itc" -type "float3" 0 0 0 ;
-	setAttr ".it[0].iti" 1;
-	setAttr ".ic[0].icp" 0;
-	setAttr ".ic[0].icc" -type "float3" 0 0 0 ;
-	setAttr ".ic[0].ici" 1;
-	setAttr -s 2 ".sro[0:1]"  0 1 2 0.5 0.5 2;
-	setAttr ".sc[0].scp" 0;
-	setAttr ".sc[0].scc" -type "float3" 0.5 0.5 0.5 ;
-	setAttr ".sc[0].sci" 1;
-	setAttr ".rfl[0]"  0 1 1;
-	setAttr ".env[0].envp" 0;
-	setAttr ".env[0].envc" -type "float3" 0 0 0 ;
-	setAttr ".env[0].envi" 1;
-createNode shadingEngine -n "rampShader2SG";
-	rename -uid "5C9FC6C4-454A-AB7F-7180-019E58D3AA4E";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "materialInfo6";
-	rename -uid "9F93CC1D-4CB7-B3E6-527B-C980B126852C";
-createNode surfaceShader -n "surfaceShader1";
-	rename -uid "FBFA6B45-4EBE-BE97-855E-D1A6259B6293";
-	setAttr ".oc" -type "float3" 1 0 0 ;
-createNode shadingEngine -n "surfaceShader1SG";
-	rename -uid "C71271F6-4554-47D0-9EAB-11A0227DEDB1";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "materialInfo7";
-	rename -uid "7601A693-44E0-716E-83E5-9BB58E79881C";
-createNode envFog -n "envFog1";
-	rename -uid "1DD0249C-4DEA-E881-ABBE-5FAC73203DC8";
-createNode shadingEngine -n "envFog1SG";
-	rename -uid "9BEE6E38-4DA2-C410-4C66-DB9855C32643";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "materialInfo8";
-	rename -uid "DFB387EF-4EE0-663F-396D-53A1AE13509B";
-createNode lambert -n "lambert2";
-	rename -uid "78F87B08-4B96-00DE-7C8A-D192C936E4DB";
-	setAttr ".c" -type "float3" 1 1 1 ;
-createNode shadingEngine -n "lambert2SG";
-	rename -uid "8ED2E3EA-4F9E-6440-D5CF-8984997D0C54";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "materialInfo9";
-	rename -uid "72CE5511-40FA-DDCC-2065-6DA2D9229013";
-createNode oceanShader -n "oceanShader1";
-	rename -uid "A9C5964D-4A3A-9FC0-F55D-2DAC73958AAD";
-	setAttr -s 3 ".env";
-	setAttr ".env[0].envp" 0.20000000298023224;
-	setAttr ".env[0].envc" -type "float3" 0.015 0.13 0.145 ;
-	setAttr ".env[0].envi" 2;
-	setAttr ".env[1].envp" 0.55000001192092896;
-	setAttr ".env[1].envc" -type "float3" 0.47999999 0.55000001 0.69999999 ;
-	setAttr ".env[1].envi" 2;
-	setAttr ".env[2].envp" 1;
-	setAttr ".env[2].envc" -type "float3" 0 0.1 0.44999999 ;
-	setAttr ".env[2].envi" 2;
-	setAttr ".scl" 4.3225808143615723;
-	setAttr ".os" 0.95483869314193726;
-	setAttr ".wd" 0.10322580486536026;
-	setAttr ".nf" 4.4516129493713379;
-	setAttr ".wlm" 7.6131420135498047;
-	setAttr ".wlx" 1.5492322444915771;
-	setAttr -s 3 ".wh[0:2]"  0.53043479 0.22 1 0.9130435 0.12 1
-		 0.29565218 0.2 1;
-	setAttr ".wtb[0]"  0 1 1;
-	setAttr -s 2 ".wp[0:1]"  0 0.30000001 1 1 0.5 1;
-	setAttr ".d" -0.059487685561180115;
-	setAttr ".wvs" 0.74838709831237793;
-createNode shadingEngine -n "oceanShader1SG";
-	rename -uid "76FE19B8-44E8-BF0D-9351-C29D2BC5E8C9";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "materialInfo10";
-	rename -uid "C8D4797A-4DCE-94D8-5860-BEB6D71DE0C6";
-createNode checker -n "checker1";
-	rename -uid "61A49FD4-4AF6-30DD-5814-AEB9534CC8E8";
-createNode place2dTexture -n "place2dTexture1";
-	rename -uid "3BEF9B5A-430B-64A5-D55E-C4B33FCEFA03";
-	setAttr ".rf" 129.3413172475901;
-	setAttr ".re" -type "float2" 4 4 ;
-createNode shadingEngine -n "oceanShader2SG";
-	rename -uid "0F6BEDF2-4641-7438-821E-5FB0E533AD95";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "materialInfo11";
-	rename -uid "F6240AC0-48F9-1F74-85A9-9495969A217D";
-createNode oceanShader -n "oceanShader3";
-	rename -uid "EA2EEFD7-45D5-59C5-87D1-FA9A81AC19D8";
-	setAttr ".fll" 2;
-	setAttr ".sc" -type "float3" 0.5 0.5 0.5 ;
-	setAttr ".rfl" 0.5;
-	setAttr -s 3 ".env";
-	setAttr ".env[0].envp" 0.20000000298023224;
-	setAttr ".env[0].envc" -type "float3" 0.015 0.13 0.145 ;
-	setAttr ".env[0].envi" 2;
-	setAttr ".env[1].envp" 0.55000001192092896;
-	setAttr ".env[1].envc" -type "float3" 0.47999999 0.55000001 0.69999999 ;
-	setAttr ".env[1].envi" 2;
-	setAttr ".env[2].envp" 1;
-	setAttr ".env[2].envc" -type "float3" 0 0.1 0.44999999 ;
-	setAttr ".env[2].envi" 2;
-	setAttr ".scl" 0.84787094593048096;
-	setAttr ".os" 0.14193548262119293;
-	setAttr ".wlm" 0.19452904164791107;
-	setAttr ".wlx" 2.2588386535644531;
-	setAttr -s 5 ".wh[0:4]"  0 0.16 1 0.56521738 0.68000001 1 0.93043476
-		 0.44 1 0.2173913 0.63999999 1 0.75652176 0.47999999 1;
-	setAttr ".wtb[0]"  0 1 1;
-	setAttr -s 2 ".wp[0:1]"  0 0.30000001 1 1 0.5 1;
-	setAttr ".d" 0.20511628687381744;
 createNode script -n "uiConfigurationScriptNode";
-	rename -uid "CFE5ECD9-4F3F-9ED3-4BCA-BFB55D1C4FFB";
+	rename -uid "2D5A1B5D-408A-0AC3-4CC8-0E955DD99320";
 	setAttr ".b" -type "string" (
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
@@ -350,12 +203,12 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
-	rename -uid "66019C79-42EF-59CC-304C-1191E7CD0467";
+	rename -uid "CBC296D6-4B43-6E91-C23E-45BD6ED187E8";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
 select -ne :time1;
-	setAttr ".o" 15;
-	setAttr ".unw" 15;
+	setAttr ".o" 1;
+	setAttr ".unw" 1;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -363,23 +216,20 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 	setAttr ".fprt" yes;
 select -ne :renderPartition;
-	setAttr -s 13 ".st";
+	setAttr -s 2 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 16 ".s";
+	setAttr -s 5 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
-select -ne :defaultRenderUtilityList1;
 select -ne :defaultRenderingList1;
-select -ne :defaultTextureList1;
-select -ne :lambert1;
-	setAttr ".c" -type "float3" 0.30322582 0.30322582 0.30322582 ;
 select -ne :initialShadingGroup;
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
+	setAttr ".ren" -type "string" "arnold";
 	setAttr ".dss" -type "string" "lambert1";
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
@@ -388,99 +238,10 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "standardSurface2SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "blinn1SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "layeredShader1SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "phong1SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "rampShader1SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "rampShader2SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "surfaceShader1SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "envFog1SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "oceanShader1SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "oceanShader2SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "standardSurface2SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "blinn1SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "layeredShader1SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "phong1SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "rampShader1SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "rampShader2SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "surfaceShader1SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "envFog1SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "oceanShader1SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "oceanShader2SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
-connectAttr "standardSurface2.oc" "standardSurface2SG.ss";
-connectAttr "standardSurface2SG.msg" "materialInfo1.sg";
-connectAttr "standardSurface2.msg" "materialInfo1.m";
-connectAttr "standardSurface2.msg" "materialInfo1.t" -na;
-connectAttr "blinn1.oc" "blinn1SG.ss";
-connectAttr "blinn1SG.msg" "materialInfo2.sg";
-connectAttr "blinn1.msg" "materialInfo2.m";
-connectAttr "layeredShader1.oc" "layeredShader1SG.ss";
-connectAttr "layeredShader1SG.msg" "materialInfo3.sg";
-connectAttr "layeredShader1.msg" "materialInfo3.m";
-connectAttr "layeredShader1.msg" "materialInfo3.t" -na;
-connectAttr "phong1.oc" "phong1SG.ss";
-connectAttr "phong1SG.msg" "materialInfo4.sg";
-connectAttr "phong1.msg" "materialInfo4.m";
-connectAttr "rampShader1.oc" "rampShader1SG.ss";
-connectAttr "rampShader1SG.msg" "materialInfo5.sg";
-connectAttr "rampShader1.msg" "materialInfo5.m";
-connectAttr "rampShader1.msg" "materialInfo5.t" -na;
-connectAttr "rampShader2.oc" "rampShader2SG.ss";
-connectAttr "rampShader2SG.msg" "materialInfo6.sg";
-connectAttr "rampShader2.msg" "materialInfo6.m";
-connectAttr "rampShader2.msg" "materialInfo6.t" -na;
-connectAttr "surfaceShader1.oc" "surfaceShader1SG.ss";
-connectAttr "surfaceShader1SG.msg" "materialInfo7.sg";
-connectAttr "surfaceShader1.msg" "materialInfo7.m";
-connectAttr "surfaceShader1.msg" "materialInfo7.t" -na;
-connectAttr "envFog1.oc" "envFog1SG.vs";
-connectAttr "envFog1SG.msg" "materialInfo8.sg";
-connectAttr "lambert2.oc" "lambert2SG.ss";
-connectAttr "lambert2SG.msg" "materialInfo9.sg";
-connectAttr "lambert2.msg" "materialInfo9.m";
-connectAttr ":time1.o" "oceanShader1.ti";
-connectAttr "oceanShader1.oc" "oceanShader1SG.ss";
-connectAttr "oceanShader1.d" "oceanShader1SG.ds";
-connectAttr "oceanShader1SG.msg" "materialInfo10.sg";
-connectAttr "oceanShader1.msg" "materialInfo10.m";
-connectAttr "oceanShader1.msg" "materialInfo10.t" -na;
-connectAttr "place2dTexture1.o" "checker1.uv";
-connectAttr "place2dTexture1.ofs" "checker1.fs";
-connectAttr "oceanShader3.oc" "oceanShader2SG.ss";
-connectAttr "pCubeShape1.iog" "oceanShader2SG.dsm" -na;
-connectAttr "oceanShader2SG.msg" "materialInfo11.sg";
-connectAttr "oceanShader3.msg" "materialInfo11.m";
-connectAttr "oceanShader3.msg" "materialInfo11.t" -na;
-connectAttr "standardSurface2SG.pa" ":renderPartition.st" -na;
-connectAttr "blinn1SG.pa" ":renderPartition.st" -na;
-connectAttr "layeredShader1SG.pa" ":renderPartition.st" -na;
-connectAttr "phong1SG.pa" ":renderPartition.st" -na;
-connectAttr "rampShader1SG.pa" ":renderPartition.st" -na;
-connectAttr "rampShader2SG.pa" ":renderPartition.st" -na;
-connectAttr "surfaceShader1SG.pa" ":renderPartition.st" -na;
-connectAttr "envFog1SG.pa" ":renderPartition.st" -na;
-connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
-connectAttr "oceanShader1SG.pa" ":renderPartition.st" -na;
-connectAttr "oceanShader2SG.pa" ":renderPartition.st" -na;
-connectAttr "standardSurface2.msg" ":defaultShaderList1.s" -na;
-connectAttr "blinn1.msg" ":defaultShaderList1.s" -na;
-connectAttr "layeredShader1.msg" ":defaultShaderList1.s" -na;
-connectAttr "phong1.msg" ":defaultShaderList1.s" -na;
-connectAttr "rampShader1.msg" ":defaultShaderList1.s" -na;
-connectAttr "rampShader2.msg" ":defaultShaderList1.s" -na;
-connectAttr "surfaceShader1.msg" ":defaultShaderList1.s" -na;
-connectAttr "envFog1.msg" ":defaultShaderList1.s" -na;
-connectAttr "lambert2.msg" ":defaultShaderList1.s" -na;
-connectAttr "oceanShader1.msg" ":defaultShaderList1.s" -na;
-connectAttr "oceanShader3.msg" ":defaultShaderList1.s" -na;
-connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "checker1.msg" ":defaultTextureList1.tx" -na;
-// End of water boundary for unity.ma
+connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
+// End of diamond for unity.ma
